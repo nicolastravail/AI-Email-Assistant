@@ -3,11 +3,11 @@ document.getElementById("generateReply").addEventListener("click", async () => {
     const responseDiv = document.getElementById("response");
 
     if (!emailContent.trim()) {
-        responseDiv.innerText = "Veuillez coller un email avant de générer une réponse.";
+        responseDiv.innerText = "⚠️ Veuillez coller un email avant de générer une réponse.";
         return;
     }
 
-    responseDiv.innerText = "Génération en cours...";
+    responseDiv.innerText = "⏳ Génération en cours...";
 
     // Webhook Make
     const WEBHOOK_URL = "https://hook.us1.make.com/lqxid8x0qb9r5lni4sifqbnh8v95w6gh";
@@ -22,12 +22,12 @@ document.getElementById("generateReply").addEventListener("click", async () => {
         const data = await response.json();
 
         if (data.response) {
-            responseDiv.innerText = "Réponse générée : " + data.response;
+            responseDiv.innerText = "✅ Réponse générée :\n" + data.response;
         } else {
-            responseDiv.innerText = "Erreur : aucune réponse reçue.";
+            responseDiv.innerText = "⚠️ Erreur : aucune réponse reçue.";
         }
     } catch (error) {
-        responseDiv.innerText = "Erreur lors de la génération.";
+        responseDiv.innerText = "❌ Erreur lors de la génération.";
         console.error(error);
     }
 });
