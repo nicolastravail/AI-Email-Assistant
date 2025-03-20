@@ -4,9 +4,16 @@
     <title>AI Email Assistant</title>
     <style>
         body {
-            width: 200px;
+            width: 300px;
             font-family: Arial, sans-serif;
             text-align: center;
+            padding: 10px;
+        }
+        textarea {
+            width: 100%;
+            height: 100px;
+            margin-bottom: 10px;
+            padding: 5px;
         }
         button {
             background-color: #4285F4;
@@ -14,15 +21,21 @@
             border: none;
             padding: 10px;
             cursor: pointer;
-            margin-top: 10px;
             border-radius: 5px;
+            width: 100%;
+        }
+        #response {
+            margin-top: 10px;
+            font-style: italic;
+            color: #333;
         }
     </style>
 </head>
 <body>
     <h2>AI Email Assistant</h2>
-    <button id="test-ai">Test IA</button>
-
+    <textarea id="emailContent" placeholder="Collez ici votre email..."></textarea>
+    <button id="generateReply">Générer une réponse</button>
+    <div id="response"></div>
     <script src="popup.js"></script>
 </body>
 </html>
